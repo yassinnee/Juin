@@ -8,10 +8,9 @@
   "scripts": {
     "build": "nest build",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "migration:run": "npm run typeorm migration:run -- -d ./db/typeorm.config.ts",
-    "migration:generate": "rimraf db/migrations/* --glob && npm run typeorm -- -d ./db/typeorm.config.ts migration:generate ./db/migrations/$npm_config_name",
-    "migration:revert": "npm run typeorm -- -d ./db/typeorm.config.ts migration:revert",
-    "migration:show": "npm run typeorm -- migration:show -d ./db/typeorm.config.ts",
+    "migration:generate": "npx typeorm-ts-node-commonjs migration:generate -d src/db/typeorm.config.ts -n",
+    "migration:run": "npx typeorm-ts-node-commonjs migration:run -d src/db/typeorm.config.ts",
+    "migration:revert": "npx typeorm-ts-node-commonjs migration:revert -d src/db/typeorm.config.ts",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
