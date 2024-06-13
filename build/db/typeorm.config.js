@@ -12,10 +12,10 @@ const dataSource = new typeorm_1.DataSource({
     username: configService.get('DB_USER'),
     password: configService.get('DB_PASSWORD'),
     database: configService.get('DB_NAME'),
-    entities: [`${__dirname}/../**/*.entity.{ts,js}`],
+    entities: [`${__dirname}/../src/**/entities/*.entity.{js,ts}`],
     synchronize: false,
     logging: configService.get('NODE_ENV') === 'development' || configService.get('NODE_ENV') === 'test',
-    migrations: [`${__dirname}/../migrations/*.{ts,js}`],
+    migrations: [`${__dirname}/migrations/*.{js,ts}`],
     migrationsTableName: 'migrations',
 });
 exports.default = dataSource;

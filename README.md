@@ -71,3 +71,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+faire l'ajout de cours 
+verifier les dto serivce de product et subscribe 
+faire un systemes de session pour les utilisater deja inscris 
+P = Prof peu crée un cour et en suivre un 
+E = eleve peu uniquement suivre ( subscribe ) un cours et les visualiser dans la listes ( product) 

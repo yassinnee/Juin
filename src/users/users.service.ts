@@ -51,6 +51,11 @@ import { InjectRepository } from '@nestjs/typeorm';
         throw new NotFoundException();
       }
     }
+
+    async findOneByEmail(email: string): Promise<User | undefined> {
+      return this.data.findOne({ where: { email } });
+    }
+    
   }
 
 

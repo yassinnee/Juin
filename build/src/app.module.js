@@ -16,6 +16,8 @@ const config_2 = require("./config");
 const users_module_1 = require("./users/users.module");
 const subscribers_module_1 = require("./subscribers/subscribers.module");
 const products_module_1 = require("./products/products.module");
+const auth_controller_1 = require("./auth/auth.controller");
+const auth_service_1 = require("./auth/auth.service");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -39,8 +41,8 @@ exports.AppModule = AppModule = __decorate([
             subscribers_module_1.SubscribersModule,
             products_module_1.ProductsModule,
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [app_controller_1.AppController, auth_controller_1.AuthController],
+        providers: [app_service_1.AppService, auth_service_1.AuthService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

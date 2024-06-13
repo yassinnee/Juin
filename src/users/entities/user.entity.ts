@@ -27,6 +27,6 @@ export class User {
     @Column({type: "enum", enum: UsersType})
     Type : UsersType;
 
-    @CreateDateColumn({ type: 'timestamp' })
-    created_at: Date;
+   /* @CreateDateColumn({ type: 'timestamp' })
+    created_at: Date; */
 }
