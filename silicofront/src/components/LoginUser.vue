@@ -2,7 +2,6 @@
     <div class="form-container">
       <form @submit.prevent="submitForm">
         <h2 class="text-center mb-4">Connexion</h2>
-         
         <div class="form-group">
           <label for="email">Adresse e-mail</label>
           <input type="email" class="form-control" id="email" v-model="email" required>
@@ -38,15 +37,25 @@
             password: this.password
           });
           console.log('Login successful!', response.data);
-          localStorage.setItem('token', response.data.access_token);
-          this.$router.push('/');
-        } catch (error) {
-          console.error('Error logging in:', error);
+        console.log('Response Data:', response.data); // Affiche les données de réponse du backend
+        localStorage.setItem('token', response.data.access_token);
+        localStorage.setItem('userId', response.data.user.id);
+        localStorage.setItem('userType', response.data.user.type);
+
+        if (response.data.user.type === 'P') {
+          console.log('Redirecting to /prof');
+          this.$router.push('/prof');
+        } else if (response.data.user.type === 'E') {
+          console.log('Redirecting to /eleve');
+          this.$router.push('/eleve');
         }
+      } catch (error) {
+        console.error('Error logging in:', error);
       }
     }
-  };
-  </script>
+  }
+};
+</script>
   
   <style scoped>
   .form-container {

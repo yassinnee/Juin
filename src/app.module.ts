@@ -9,6 +9,8 @@ import { SubscribersModule } from './subscribers/subscribers.module';
 import { ProductsModule } from './products/products.module';
 import { AuthModule } from './auth/auth.module';  
 import { User } from './users/entities/user.entity';
+import { AuthJwtModule } from './jwt/auth-jwt.module';
+import { Product } from './products/entities/product.entity';
 
 @Module({
   imports: [    
@@ -22,7 +24,7 @@ import { User } from './users/entities/user.entity';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         ...configService.get('database'),
-        entities: [User],
+        entities: [User, Product],
       }),
       inject: [ConfigService],
     }),
@@ -30,6 +32,8 @@ import { User } from './users/entities/user.entity';
     SubscribersModule,
     ProductsModule,
     AuthModule,
+    AuthJwtModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -77,3 +77,8 @@ verifier les dto serivce de product et subscribe
 faire un systemes de session pour les utilisater deja inscris 
 P = Prof peu crée un cour et en suivre un 
 E = eleve peu uniquement suivre ( subscribe ) un cours et les visualiser dans la listes ( product) 
+
+/// vendredi 
+postman pour l'url products marche mais c'ets a nousd d emetre la date de creation 
+refaire le front pour que les donnes sois envoyer de la bas et afficher pour les eleve correctmeeent 
+rajouter un require login pour eviter qu'un elelve rajoute un corus ou ...
